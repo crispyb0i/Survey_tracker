@@ -1,0 +1,14 @@
+<h1>Here is a list of all our users</h1>
+
+<ul>
+  <% @users.each do |user| %>
+  <li><a href="/user/<%=user.id%>/surveys"><%= user.name %></a></li>
+  <% end %>
+</ul>
+
+<h2>Add a user</h2>
+<form action="/user/new" method="post">
+  <label for="name">Enter name for new user:</label>
+  <input id="name" name="name" type="text" required>
+  <button type="submit" class="btn btn-primary">Add</button>
+</form>

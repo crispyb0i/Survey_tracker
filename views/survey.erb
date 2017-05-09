@@ -1,0 +1,12 @@
+<h1><%=@survey.name%></h1>
+
+<h2>There are <%= @survey.questions.length %> questions in this survey</h2>
+
+<a href="/survey/<%=@survey.id%>/questions"><button type="submit" name="button" class="btn btn-success btn-lg">START!</button></a>
+
+<h2>Add a question</h2>
+<form action="/survey/<%=@survey.id%>/question/edit" method="post">
+  <label for="question">Enter a new question:</label>
+  <input id="question" name="question" type="text" required>
+  <button type="submit" class="btn btn-primary">Add</button>
+</form>
