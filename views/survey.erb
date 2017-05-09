@@ -2,6 +2,10 @@
 
 <h2>There are <%= @survey.questions.length %> questions in this survey</h2>
 
+<h2><% @questions.each do |question| %>
+<li><a href="/survey/questions/<%=question.id%>"><%= question.content %></a></li>
+<% end %></h2>
+
 <a href="/survey/<%=@survey.id%>/questions"><button type="submit" name="button" class="btn btn-success btn-lg">START!</button></a>
 
 <h2>Add a question</h2>
